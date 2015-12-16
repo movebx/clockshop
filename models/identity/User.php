@@ -12,7 +12,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return 'users';
     }
-    
+
     public function setPassword($password)
     {
         $this->password = \Yii::$app->security->generatePasswordHash($password);
