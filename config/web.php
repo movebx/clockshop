@@ -11,6 +11,9 @@ $config = [
     'bootstrap' => ['log'],
     'components' => $components,
     'params' => $params,
+    'modules' => [
+        'admin' => 'app\modules\admin\AdminModule'
+    ]
 ];
 
 if (YII_ENV_DEV) {

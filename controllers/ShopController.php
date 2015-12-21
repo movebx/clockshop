@@ -7,9 +7,18 @@ use yii\web\Controller;
 
 class ShopController extends Controller
 {
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+        ];
+    }
+
     public function actionIndex()
     {
 
-        return 'ok';
+        return $this->render('index');
     }
 }

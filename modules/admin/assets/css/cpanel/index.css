@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../../fonts/FontAwesome.otf');
+}
+
+body {
+    //background-color: #cbc8ad;
+}
+
+.alert-success {
+    background-color: #5cb85c;
+}
+
+.navbar {
+    border-radius: 0 !important;
+
+}
+
+.body-dotted {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    min-height: 800px;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0px 0px 3px black;
+}
+
+.border-bot-dashed {
+
+    border-bottom: 1px dashed dimgray;
+}
+
+.img-background {
+    background-color: #cbc8ad;
+    padding: 1% 5%;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 3px black;
+}
+
+.cpanel-img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 3px #000000;
+}
+
+.remove-img {
+    position: relative;
+    left: 100%;
+}
+
+.row-margin {
+    margin-top: 1%;
+}
+
+.footer {
+    min-height: 200px;
+}
