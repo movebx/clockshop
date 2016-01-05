@@ -62,7 +62,9 @@ class ProductsSearch extends ActiveRecord
         }
 
 
-        $query->andFilterWhere(['id' => $this->id])->andFilterWhere(['like', 'clk_name', $this->clk_name])
+        $query
+            ->andFilterWhere(['products.id' => $this->id])
+            ->andFilterWhere(['like', 'clk_name', $this->clk_name])
             ->andFilterWhere(['like', 'clk_description', $this->clk_description])
             ->andFilterWhere(['like', 'characteristics.display_type', $this->getAttribute('characteristics.display_type')])
             ->andFilterWhere(['like', 'characteristics.mechanism_type', $this->getAttribute('characteristics.mechanism_type')])

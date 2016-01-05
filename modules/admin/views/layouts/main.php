@@ -79,16 +79,17 @@ NavBar::end();
     <?php
     if(!empty($flashBag))
         foreach($flashBag as $class => $messages)
-            foreach($messages as $message)
-            {
-                ?>
-                <div class="row row-margin">
-                    <div class="col-lg-12 text-center">
-                        <div id="alert-close" class="alert alert-<?= $class ?> "><strong><?= $class ?>!</strong> <?= $message ?></div>
+            if($class === 'success' || $class === 'danger')
+                foreach($messages as $message)
+                {
+                    ?>
+                    <div class="row row-margin">
+                        <div class="col-md-12 text-center">
+                            <div id="alert-close" class="alert alert-<?= $class ?> "><strong><?= $class ?>!</strong> <?= $message ?></div>
+                        </div>
                     </div>
-                </div>
-                <?php
-            }
+                    <?php
+                }
     ?>
 
         <?= $content ?>
@@ -97,7 +98,7 @@ NavBar::end();
 
 
     <div class="row">
-        <div class="col-lg-12 footer">
+        <div class="col-md-12 footer">
 
         </div>
     </div>

@@ -9,7 +9,7 @@ class CpanelAsset extends AssetBundle
 {
     public $sourcePath = '@app/modules/admin/assets/css/cpanel';
 
-    public $css = ['index.css'];
+    public $css = ['index.css', 'orders.css'];
 
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
 

@@ -3,6 +3,9 @@
 $routes = require(__DIR__.'/routes.php');
 
 return [
+    'authManager' => [
+        'class' => 'yii\rbac\DbManager'
+    ],
     'urlManager' => [
         'enablePrettyUrl' => true,
         'showScriptName' => false,
@@ -18,7 +21,7 @@ return [
         'baseUrl' => ''
     ],
     'user' => [
-        'identityClass' => 'app\models\User',
+        'identityClass' => 'app\modules\admin\identity\Admin',
         'enableAutoLogin' => true,
     ],
     'errorHandler' => [

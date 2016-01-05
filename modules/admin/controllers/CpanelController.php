@@ -11,6 +11,7 @@ use app\modules\admin\models\Orders;
 use app\modules\admin\models\Products;
 use app\modules\admin\models\UpdateProduct;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\UploadedFile;
 use app\modules\admin\models\ProductsSearch;
@@ -18,6 +19,21 @@ use app\modules\admin\models\ProductsSearch;
 
 class CpanelController extends Controller
 {
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@']
+                    ],
+                ]
+            ]
+        ];
+    }
+
     public function actionIndex()
     {
         $searchModel = new ProductsSearch();
@@ -48,7 +64,8 @@ class CpanelController extends Controller
 
     public function actionOrders()
     {
-        $model = Orders::find()->joinWith(['customer', 'products'])->groupBy(['customer_id'])->all();
+        $query = Orders::find()->joinWith(['customer', 'orderProducts.product.images', 'orderProducts.product.characteristics']);
+        $model = $query->all();
 
         return $this->render('orders', ['model' => $model]);
     }

@@ -1,0 +1,52 @@
+.main-item {
+    background-color: #f8f8f8;
+    border: 1px solid #e7e7e7;
+}
+
+.go-cpanel {
+    position: fixed;
+    top: 15%;
+    left: 0;
+    width: 5%;
+    border: 1px solid #e7e7e7;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 9999;
+    text-align: center;
+}
+
+.go-cpanel a {
+    display: block;
+    height: 100%;
+}
+
+.side {
+    height: 200px;
+    border-right: none;
+}
+
+.content {
+    height: 800px;
+    border: 1px solid #e7e7e7;
+
+}
+
+label.require:after
+{
+    content: "*";
+    color: red;
+}
+
+.cart-button{
+    margin-top: 10%;
+}
+
+#amount {
+
+}
+
+.amount {
+    display: inline;
+    width: 30%;
+    text-align: center;
+}

@@ -27,4 +27,10 @@ class HelloController extends Controller
     {
         echo $message . "\n";
     }
+
+    public function actionDel()
+    {
+        \Yii::$app->session->destroy();
+        echo 'Done!';
+    }
 }

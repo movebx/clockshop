@@ -3,7 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $dataProvider \yii\data\ActiveDataProvider */
 
-
+echo '<h1>Crud panel</h1>';
 echo \yii\grid\GridView::widget([
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,

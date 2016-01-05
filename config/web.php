@@ -5,6 +5,7 @@ $components = require (__DIR__.'/components.php');
 
 $config = [
     'id' => 'shop',
+    'language' => 'ru-RU',
     'timeZone' => 'Europe/Kiev',
     'defaultRoute' => 'shop/index',
     'basePath' => dirname(__DIR__),

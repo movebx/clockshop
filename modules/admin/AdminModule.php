@@ -17,7 +17,6 @@ class AdminModule extends Module
         Yii::$app->user->identityClass = 'app\modules\admin\identity\Admin';
 
 
-
         Yii::configure($this, $this->config());
     }
 
@@ -27,6 +26,9 @@ class AdminModule extends Module
     {
         return [
             'layout' => 'main',
+            'aliases' => [
+                '@admin' => '@app/modules/admin'
+            ]
         ];
     }
 

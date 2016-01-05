@@ -1,0 +1,12 @@
+.img-little {
+    width: 5%;
+    height: 5%;
+}
+
+.table-striped td {
+    vertical-align: middle;
+}
+
+.order-product b {
+    color: #0000cc;
+}
