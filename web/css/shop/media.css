@@ -1,0 +1,41 @@
+@media (min-width: 1200px) {
+    .product {
+        max-height: none;
+    }
+}
+
+/* Для некоторых нетбуков и планшетов (таблеток) */
+@media (min-width: 768px) and (max-width: 979px) {
+    .product-price small {
+        display: none;
+    }
+
+    .product {
+        max-height: none;
+    }
+
+    .product-item {
+        border: none;
+    }
+}
+/* Для планшетов и некоторых телефонов */
+@media (max-width: 767px) {
+    .product {
+        max-height: none;
+    }
+
+    .product-item {
+        border: none;
+    }
+}
+/* Для телефонов и некоторых устройств у которых совсем маленький экран */
+@media (max-width: 480px) {
+    .product {
+        max-height: none;
+    }
+
+    .product-item {
+        border: none;
+    }
+}
+

@@ -1,0 +1,45 @@
+.sort{
+    padding-bottom: 1%;
+}
+
+.product {
+    margin-bottom: 1%;
+    max-height: 300px;
+}
+
+.product-item {
+    border: 2px solid #e7e7e7;
+    border-radius: 6px;
+}
+
+.product-header {
+    font-family: "Helvetica Neue";
+    font-weight: bolder;
+    word-wrap: break-word;
+    word-break: normal;
+    text-align: center;
+    min-height: 40px;
+}
+
+.catalog-thumb {
+    width: 100%;
+}
+
+.product-price {
+    color: #b19d00;
+    font-weight: bolder;
+}
+
+.product-price small {
+    color: #b19d00;
+}
+
+.product-btn {
+    margin-bottom: 3%;
+}
+
+.pages {
+    text-align: center;
+}
+
+

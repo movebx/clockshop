@@ -19,7 +19,7 @@ class ConfirmOrder extends Model
         return [
             [['products', 'c_name', 'c_phone'], 'required'],
             ['captcha', 'captcha', 'captchaAction' => 'shop/captcha'],
-            ['c_phone', 'match', 'pattern' => '/^[\d+]{9,}$/i']
+            ['c_phone', 'match', 'pattern' => '/^[\d+]{5,}$/i']
         ];
     }
 

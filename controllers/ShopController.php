@@ -3,9 +3,9 @@
 namespace app\controllers;
 
 use app\models\ConfirmOrder;
-use app\modules\admin\models\Customers;
 use app\modules\admin\models\Products;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\Response;
@@ -71,18 +71,34 @@ class ShopController extends Controller
     {
         $session = Yii::$app->session;
         $session->open();
+        if(!isset($_SESSION['cart']))
+            $_SESSION['cart'][] = $id;
+
+        if(!in_array($id, $_SESSION['cart']))
             $_SESSION['cart'][] = $id;
         //$session->destroy();
         $session->close();
 
-        Yii::$app->response->format = Response::FORMAT_JSON;
-
-        return true;
+        return $this->goBack();
     }
 
-    public function actionDetailView($id)
+    public function actionCartDel($id)
     {
-        $product = Products::findOne($id);
+        Yii::$app->session->open();
+        foreach($_SESSION['cart'] as $key => $value)
+            if($value === $id)
+                unset($_SESSION['cart'][$key]);
+
+        if(!empty($_SESSION['cart']))
+            ksort($_SESSION['cart']);
+        Yii::$app->session->close();
+
+        return $this->redirect('/shop/cart');
+    }
+
+    public function actionProduct($id)
+    {
+        $product = Products::find()->joinWith(['images', 'characteristics'])->where(['products.id' => $id])->one();
 
         return $this->render('detail-view', ['product' => $product]);
     }
@@ -92,9 +108,40 @@ class ShopController extends Controller
         return $this->render('index');
     }
 
+    public function actionCatalog()
+    {
+        $query = Products::find()->joinWith(['images', 'characteristics']);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 3
+            ],
+            'sort' => [
+                'attributes' => [
+                    'price' => ['label' => 'Цене'],
+                    'clk_name' => ['label' => 'Названию']
+                ]
+            ]
+        ]);
+
+        return $this->render('catalog', ['dataProvider' => $dataProvider]);
+    }
+
+    public function actionOplata()
+    {
+        return $this->render('oplata');
+    }
+
+    public function actionContacts()
+    {
+        return $this->render('contacts');
+    }
+
     public function actionDel()
     {
         Yii::$app->session->removeAllFlashes();
+        Yii::$app->session->remove('cart');
         print_r(Yii::$app->session->allFlashes);
 
         echo 'Done!';

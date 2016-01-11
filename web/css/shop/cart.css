@@ -1,0 +1,15 @@
+label.require:after
+{
+    content: "*";
+    color: red;
+}
+
+.amount {
+    display: inline;
+    width: 30%;
+    text-align: center;
+}
+
+.error-hint {
+    color: red;
+}

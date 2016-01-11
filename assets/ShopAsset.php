@@ -11,15 +11,14 @@ class ShopAsset extends AssetBundle
     public $baseUrl = '@web';
 
     public $css =[
-        'css/layout/main.css'
+        'css/layout/main.css',
+        'css/shop/media.css',
     ];
 
     public $jsOptions = [
         'position' => View::POS_HEAD
     ];
 
-    public $depends = [
-        'yii\web\YiiAsset',
-    ];
+
 
 }

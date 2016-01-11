@@ -1,7 +1,9 @@
 .main-item {
     background-color: #f8f8f8;
     border: 1px solid #e7e7e7;
+    border-radius: 6px;
 }
+
 
 .go-cpanel {
     position: fixed;
@@ -20,33 +22,26 @@
     height: 100%;
 }
 
-.side {
-    height: 200px;
-    border-right: none;
+.main {
+
+}
+
+.flag {
+    width: 100%;
+}
+
+.menu {
+    margin-top: 10%;
+    list-style-type: none;
+    font-weight: bolder;
+    font-variant: small-caps;
 }
 
 .content {
-    height: 800px;
-    border: 1px solid #e7e7e7;
+    padding: 0;
 
 }
 
-label.require:after
-{
-    content: "*";
-    color: red;
-}
-
-.cart-button{
-    margin-top: 10%;
-}
-
-#amount {
-
-}
-
-.amount {
-    display: inline;
-    width: 30%;
-    text-align: center;
+.foot {
+    height: 300px;
 }

@@ -15,10 +15,11 @@ return [
     'request' => [
         // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
         'cookieValidationKey' => 'ALZtAf5hEbJ3wUXIxboDCIg0z09Z5-gv',
+        'baseUrl' => ''
     ],
     'cache' => [
         'class' => 'yii\caching\FileCache',
-        'baseUrl' => ''
+
     ],
     'user' => [
         'identityClass' => 'app\modules\admin\identity\Admin',

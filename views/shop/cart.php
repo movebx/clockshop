@@ -1,6 +1,7 @@
 <?php
 
 use yii\captcha\Captcha;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
@@ -8,15 +9,17 @@ $this->title = 'Корзина';
 
 $isProductsEmpty = empty($products);
 
+$this->registerCssFile('@web/css/shop/cart.css');
 $this->registerJsFile('@web/js/shop/cart.js', ['position' => \yii\web\View::POS_END]);
 
 
 ?>
 <h1>Корзина</h1>
-<form action="<?= \yii\helpers\Url::to('/shop/confirm-order') ?>" method="post">
+<form action="<?= \yii\helpers\Url::to('/shop/confirm-order') ?>" method="post" id="confirm-form">
     <input type="hidden" name="_csrf" value="<?= Yii::$app->request->getCsrfToken() ?>">
 <table id="cart" class="table">
     <tr>
+        <td><b>Убрать</b></td>
         <td><b>Наименование товара</b></td>
         <td><b>Цена, грн</b></td>
         <td><b>Количество</b></td>
@@ -31,7 +34,8 @@ if(!$isProductsEmpty)
     {
         $total += ($product->price * 1);
         echo '<tr>';
-            echo '<td><i><a href="/shop/product/detail?id='.$product->id.'">'.$product->clk_name.'</a></i><input type="hidden" name="products[group'.$pg.'][id]" value="'.$product->id.'"></td>';
+            echo '<td><a href="'.Url::to(['shop/cart-del?id='.$product->id]).'"><span class="glyphicon glyphicon-minus"></span></a></td>';
+            echo '<td><i><a href="'.Url::to(['shop/product', 'id' => $product->id]).'">'.$product->clk_name.'</a></i><input type="hidden" name="products[group'.$pg.'][id]" value="'.$product->id.'"></td>';
             echo '<td>'.$product->price.'</td>';
             echo '<td id="amount"><input class="amount" type="text" name="products[group'.$pg.'][amount]" value="1"></td>';
             echo '<td data-sum="this">'.($product->price * 1).'</td>';
@@ -49,10 +53,12 @@ if(!$isProductsEmpty)
             <label for="c-name" class="require">Ваше Имя</label>
             <input class="form-control" id="c-name" type="text" name="c_name" placeholder="Введите имя">
         </div>
+        <div id="c-name-hint" class="col-md-12 error-hint"></div>
         <div class="form-group">
             <label for="c-name" class="require">Ваш Телефон</label>
             <input class="form-control" id="c-phone" type="text" name="c_phone" placeholder="Введите телефон">
         </div>
+        <div id="c-phone-hint" class="col-md-12 error-hint"></div>
     </div>
     <div class="form-group">
         <?= Captcha::widget([
@@ -63,7 +69,7 @@ if(!$isProductsEmpty)
     </div>
     <div class="col-md-4 col-md-offset-8">
         <div class="cart-button">
-        <?= \yii\helpers\Html::submitButton('Подтвердить заказ', ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+        <?= \yii\helpers\Html::submitButton('Подтвердить заказ', ['class' => 'btn btn-primary btn-lg btn-block', 'id' => 'confirm-button']) ?>
         </div>
     </div>
 
