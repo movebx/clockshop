@@ -17,6 +17,11 @@
     .product-item {
         border: none;
     }
+
+    .main-item {
+        border: transparent;
+        background-color: transparent;
+    }
 }
 /* Для планшетов и некоторых телефонов */
 @media (max-width: 767px) {
@@ -27,6 +32,11 @@
     .product-item {
         border: none;
     }
+
+    .main-item {
+        border: transparent;
+        background-color: transparent;
+    }
 }
 /* Для телефонов и некоторых устройств у которых совсем маленький экран */
 @media (max-width: 480px) {
@@ -36,6 +46,11 @@
 
     .product-item {
         border: none;
+    }
+
+    .main-item {
+        border: transparent;
+        background-color: transparent;
     }
 }
 

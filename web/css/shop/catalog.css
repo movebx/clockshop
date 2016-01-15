@@ -28,6 +28,7 @@
 .product-price {
     color: #b19d00;
     font-weight: bolder;
+    text-shadow: 1px 1px black;
 }
 
 .product-price small {

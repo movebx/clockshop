@@ -22,7 +22,9 @@
     height: 100%;
 }
 
-.main {
+
+.navbar {
+    border-radius: 0 !important;
 
 }
 
@@ -38,10 +40,10 @@
 }
 
 .content {
-    padding: 0;
+    padding: 0 0 10% 0;
 
 }
 
 .foot {
-    height: 300px;
+    height: 200px;
 }

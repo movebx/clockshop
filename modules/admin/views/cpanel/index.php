@@ -4,6 +4,7 @@
 /* @var $dataProvider \yii\data\ActiveDataProvider */
 
 echo '<h1>Crud panel</h1>';
+
 echo \yii\grid\GridView::widget([
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
@@ -33,4 +34,3 @@ echo \yii\grid\GridView::widget([
 ]);
 
 
-?>

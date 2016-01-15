@@ -2,6 +2,7 @@
 /* @var $this \yii\web\View */
 use app\modules\admin\models\AddProduct;
 
+
 ?>
 
 <h1>Orders</h1>

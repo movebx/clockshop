@@ -7,7 +7,7 @@ use yii\web\AssetBundle;
 
 class CpanelAsset extends AssetBundle
 {
-    public $sourcePath = '@app/modules/admin/assets/css/cpanel';
+    public $sourcePath = '@admin/assets/css/cpanel';
 
     public $css = ['index.css', 'orders.css'];
 

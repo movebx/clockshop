@@ -8,6 +8,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 use yii\web\Response;
 
 class ShopController extends Controller
@@ -79,7 +80,7 @@ class ShopController extends Controller
         //$session->destroy();
         $session->close();
 
-        return $this->goBack();
+        return $this->redirect('/shop/catalog');
     }
 
     public function actionCartDel($id)
@@ -99,6 +100,8 @@ class ShopController extends Controller
     public function actionProduct($id)
     {
         $product = Products::find()->joinWith(['images', 'characteristics'])->where(['products.id' => $id])->one();
+        if(!$product)
+            throw new NotFoundHttpException('Product Not Found');
 
         return $this->render('detail-view', ['product' => $product]);
     }

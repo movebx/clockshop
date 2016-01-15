@@ -52,9 +52,11 @@ ShopAsset::register($this);
 <?php
 
     NavBar::begin([
-        'brandLabel' => 'Часы для настоящих патриотов',
+        'brandLabel' => 'Украинские часы',
+        'brandUrl' => '/shop/catalog'
     ]);
 
+/*
     echo Nav::widget([
         'items' => [
             [
@@ -68,7 +70,7 @@ ShopAsset::register($this);
             'class' => 'navbar-nav navbar-left'
         ]
     ]);
-
+*/
 
 
     echo Nav::widget([
@@ -90,10 +92,10 @@ ShopAsset::register($this);
 ?>
 </header>
 
-    <div class="container-fluid main">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-offset-3 col-md-6"><img class="flag" src="/images/shop/ukraine-flag.png" alt="Флаг укрины, часы для настощих патриотов"> </div>
-            <div class="col-md-3 main-item">с 9:00 до 21:00 <p><span class="glyphicon glyphicon-phone"></span> Телефон: +38(050)6627376</p></div>
+            <div class="col-md-3 main-item"><p>Режим работы: с 9:00 до 21:00</p> <h4 class="text-info"><span class="glyphicon glyphicon-phone"></span> Телефон: +38(050)6627376</h4></div>
         </div>
         <div class="row">
             <div class="col-md-offset-1 col-md-3">
@@ -112,7 +114,7 @@ ShopAsset::register($this);
         </div>
     </div>
 
-<div class="col-md-12 foot">
+<div class="col-md-12 foot main-item">
 
 </div>
 <?php $this->endBody(); ?>

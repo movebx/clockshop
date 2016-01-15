@@ -27,18 +27,21 @@ group by t1.name";
 
 function squareMatrixToString($squareMatrix)
 {
-    $result = '<hr>';
+    $result = '<hr><table style="text-align: center">';
+
     $squareMatrixSize = count($squareMatrix);
 
     for($i = 0; $i < $squareMatrixSize; $i++)
     {
+        $result .= '<tr>';
         for($j = 0; $j < $squareMatrixSize; $j++)
         {
-            $result .= $squareMatrix[$i][$j] . ' ';
+            $result .= '<td>'.$squareMatrix[$i][$j] . '</td>';
         }
-        $result .= '<br>';
+        $result .= '</tr>';
     }
-    return $result;
+
+    return $result .= '</table>';
 }
 /*** Generate squareMatrix ***/
 
@@ -68,8 +71,38 @@ for($i = 0; $i < $squareMatrixSize; $i++)
 }
 
 
+
+
+
 echo squareMatrixToString($squareMatrix);
 // TO DO:
+
+$tmp = [];
+
+for($col = 0; $col < $squareMatrixSize; $col++)
+{
+    $plus = [];
+    $minus = [];
+    for($row = 0; $row < $squareMatrixSize; $row++)
+    {
+        $num = $squareMatrix[$row][$col];
+        if($num >= 0)
+            $plus[] = $num;
+        else
+            $minus[] = $num;
+    }
+
+    $continueRow = count($plus);
+    for($row = 0; $row < $continueRow; $row++)
+        $squareMatrix[$row][$col] = array_shift($plus);
+
+
+    $toEnd = count($minus);
+    for($row = $continueRow; $row < $squareMatrixSize; $row++)
+        $squareMatrix[$row][$col] = array_shift($minus);
+
+}
+
 
 echo squareMatrixToString($squareMatrix);
 
