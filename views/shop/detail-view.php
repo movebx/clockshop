@@ -23,7 +23,7 @@ $this->title = $product->clk_name;
                     case 3: echo 'Унисекс'; break;
                 }?></div>
             <div><b>Механизм:</b> <?= $product->characteristics->mechanism_type ?></div>
-            <div><b>Индикация:</b> <?= $product->characteristics->display_type ?></div>
+            <div><b>Циферблат:</b> <?= $product->characteristics->display_type ?></div>
             <div><b>Ремешок:</b> <?= $product->characteristics->starp_type ?></div>
             <h4><b>Опсиание:</b></h4>
             <div><?= $product->clk_description ?></div>

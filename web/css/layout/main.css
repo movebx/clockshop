@@ -4,7 +4,6 @@
     border-radius: 6px;
 }
 
-
 .go-cpanel {
     position: fixed;
     top: 15%;
@@ -32,11 +31,21 @@
     width: 100%;
 }
 
+.phone-color {
+    color: #b1442e;
+}
+
 .menu {
     margin-top: 10%;
     list-style-type: none;
+    font-size: 120%;
     font-weight: bolder;
     font-variant: small-caps;
+}
+
+.vk-group {
+    margin-top: 10%;
+    height: 150px;
 }
 
 .content {
@@ -45,5 +54,7 @@
 }
 
 .foot {
-    height: 200px;
+    height: 150px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
 }

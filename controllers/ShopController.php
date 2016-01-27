@@ -118,7 +118,7 @@ class ShopController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => 3
+                'pageSize' => 4
             ],
             'sort' => [
                 'attributes' => [
@@ -131,9 +131,14 @@ class ShopController extends Controller
         return $this->render('catalog', ['dataProvider' => $dataProvider]);
     }
 
-    public function actionOplata()
+    public function actionDelivery()
     {
-        return $this->render('oplata');
+        return $this->render('delivery');
+    }
+
+    public function actionGuarantee()
+    {
+        return $this->render('guarantee');
     }
 
     public function actionContacts()
